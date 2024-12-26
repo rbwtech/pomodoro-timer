@@ -104,6 +104,8 @@ $ npm start
 # Jalankan frontend
 $ cd ../frontend
 $ npm run dev
+atau
+$ npm start
 ```
 
 ## 📖 Cara Penggunaan
