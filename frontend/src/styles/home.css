@@ -1,0 +1,251 @@
+/* Base Styles */
+.home-container {
+    min-height: 100vh;
+    background: transparent;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero Section */
+.hero-section {
+    margin-bottom: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    min-height: 20vh;
+    background: transparent;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--gold-primary);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.3s forwards;
+    color: var(--text-light);
+}
+
+/* Features Section */
+.features-section {
+    padding: 6rem 2rem;
+    margin-top: -20vh;
+    position: relative;
+}
+
+
+.section-title {
+    color: var(--gold-primary);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.feature-card {
+    background: rgba(45, 45, 45, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 1.5rem; 
+    padding: 2rem; 
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.feature-card:hover {
+    border-color: var(--gold-primary);
+    background: rgba(45, 45, 45, 0.5);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    color: var(--gold-primary);
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    color: var(--gold-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.feature-description {
+    color: var(--text-light);
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.gradient-blur {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.blur-top-right {
+    top: -250px;
+    right: -250px;
+}
+
+.blur-bottom-left {
+    bottom: -250px;
+    left: -250px;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 6rem 2rem;
+    background: transparent;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-description {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin: 1.5rem 0 2.5rem;
+    opacity: 0.9;
+}
+
+.start-button {
+    background: var(--gold-primary);
+    color: var(--dark-primary);
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .hero-section {
+        margin-bottom: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        margin-bottom: 200px;
+        min-height: 20vh;
+        padding: 3rem 1.5rem;
+    }
+
+    .features-section {
+        padding: 4rem 1.5rem;
+        margin-top: -15vh;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        margin-bottom: 80px;
+        padding: 2rem 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 6vw, 2.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .feature-card {
+        padding: 1.25rem;
+        border-radius: 1rem;
+    }
+
+    .start-button {
+        width: 100%;
+        padding: 1rem;
+    }
+}

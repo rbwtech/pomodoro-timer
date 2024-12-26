@@ -1,0 +1,232 @@
+/* src/styles/spotifyPlayer.css */
+
+.spotify-player {
+    background-color: var(--dark-primary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.spotify-player h3 {
+    color: var(--gold-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.spotify-search {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.spotify-search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gold-primary);
+    border-radius: 5px;
+    background-color: var(--dark-primary);
+    color: var(--text-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spotify-search-input:focus {
+    outline: none;
+    border-color: var(--gold-light);
+    -webkit-box-shadow: 0 0 5px var(--gold-light); /* Prefix for Safari */
+    box-shadow: 0 0 5px var(--gold-light);
+}
+
+.spotify-connect-container {
+    display: flex;
+    justify-content: center; /* Menengahkan horizontal */
+    align-items: center;    /* Menengahkan vertikal jika diperlukan */
+    height: 100%;           /* Pastikan kontainer memiliki tinggi */
+}
+
+.spotify-connect-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--spotify-green);
+    color: var(--text-light);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    margin-bottom: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.spotify-connect-btn:hover {
+    background-color: #1ed760; /* Warna hijau lebih terang */
+    transform: translateY(-2px);
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--dark-primary);
+    border: 1px solid var(--gold-primary);
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.track-item:hover {
+    background-color: var(--dark-tertiary);
+}
+
+.track-thumbnail {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.track-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.track-name {
+    color: var(--text-light);
+    font-size: var(--font-size-base);
+}
+
+.track-artist {
+    color: var(--text-dim);
+    font-size: var(--font-size-sm);
+}
+
+.play-pause-btn {
+    background: none;
+    border: none;
+    color: var(--gold-primary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.play-pause-btn:hover {
+    color: black;
+    transform: scale(1.01);
+}
+
+.now-playing {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.now-playing h4 {
+    margin-bottom: 0.5rem;
+}
+
+.playlists-section {
+    margin-top: 2rem;
+}
+
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.playlist-card {
+    background-color: var(--dark-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.playlist-card:hover {
+    background-color: var(--dark-tertiary);
+}
+
+.playlist-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.playlist-placeholder {
+    width: 100%;
+    height: 100px;
+    background-color: var(--dark-tertiary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+}
+
+.playlist-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.playlist-info h4 {
+    color: var(--text-light);
+    font-size: var(--font-size-base);
+}
+
+.playlist-info button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--gold-primary);
+    color: var(--dark-primary);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+}
+
+.playlist-info button:hover {
+    background-color: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+}
+
+/* Error Message */
+.error-message {
+    background-color: var(--accent-danger);
+    color: var(--text-light);
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.error-message button {
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--dark-primary);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.error-message button:hover {
+    background-color: var(--dark-tertiary);
+    transform: translateY(-1px);
+}
