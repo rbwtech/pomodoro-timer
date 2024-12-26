@@ -127,6 +127,7 @@ const Timer = () => {
     const [isActive, setIsActive] = useState(false);
     const [type, setType] = useState('focus');
     const [customMinutes, setCustomMinutes] = useState('');
+    const [customSeconds, setCustomSeconds] = useState('');
     const [soundEnabled, setSoundEnabled] = useState(true);
     const [currentTask, setCurrentTask] = useState('');
     const [weeklyGoal, setWeeklyGoal] = useState(1200); // Default weekly goal
@@ -177,20 +178,39 @@ const Timer = () => {
     // Timer functions
     const startTimer = async () => {
         try {
-            const { user } = JSON.parse(localStorage.getItem('user'));
+            const storedData = localStorage.getItem('user');
+            if (!storedData) {
+                throw new Error('User data not found in localStorage');
+            }
+    
+            const { user } = JSON.parse(storedData);
+    
+            if (!user || !user.id) {
+                throw new Error('Invalid user data');
+            }
+    
+            const duration = minutes * 60 + seconds;
+    
+            if (duration <= 0) {
+                console.error('Invalid duration:', { minutes, seconds, duration });
+                throw new Error('Duration must be greater than 0.');
+            }
+    
             const response = await timerService.startSession({
                 userId: user.id,
-                duration: minutes,
+                duration,
                 type,
-                currentTask
+                currentTask,
             });
+    
             setSessionId(response.sessionId);
-            setMotivation(getRandomMotivation()); // Update motivasi
             setIsActive(true);
         } catch (error) {
-            console.error('Failed to start session:', error);
+            console.error('Failed to start session:', error.message);
         }
     };
+    
+    
 
     const pauseTimer = () => setIsActive(false);
     
@@ -226,9 +246,11 @@ const Timer = () => {
             if (sessionId) {
                 await timerService.completeSession(sessionId);
     
-                // Update focus time in the backend
                 const user = JSON.parse(localStorage.getItem('user'));
+    
                 if (user && user.user.id) {
+                    const focusTimeInSeconds = minutes * 60 + seconds;
+    
                     const response = await fetch('http://localhost:5000/api/timer/update-focus-time', {
                         method: 'POST',
                         headers: {
@@ -237,7 +259,7 @@ const Timer = () => {
                         },
                         body: JSON.stringify({
                             userId: user.user.id,
-                            focusTime: minutes,
+                            focusTime: focusTimeInSeconds, // Kirim waktu dalam detik
                         }),
                     });
     
@@ -254,26 +276,13 @@ const Timer = () => {
                     audio.volume = volume;
                     await audio.play().catch((err) => console.error('Failed to play sound:', err));
                 }
-                
-    
-                if (type === 'focus') {
-                    setWeeklyProgress((prev) => prev + minutes);
-                    setCycles((prev) => prev + 1);
-                    setTotalFocusTime((prev) => prev + minutes);
-    
-                    const today = new Date().toDateString();
-                    if (lastCompleted !== today) {
-                        setStreak((prev) => prev + 1);
-                        setLastCompleted(today);
-                    }
-                }
             }
         } catch (error) {
             console.error('Failed to complete session or update focus time:', error);
         }
     
         switchType(type === 'focus' ? 'break' : 'focus');
-    }, [sessionId, soundEnabled, volume, type, minutes, loadAnalytics, lastCompleted]);
+    }, [sessionId, soundEnabled, volume, type, minutes, seconds, loadAnalytics]);
     
 
     // Timer effect
@@ -301,12 +310,25 @@ const Timer = () => {
 
     const handleCustomDuration = (e) => {
         e.preventDefault();
-        if (customMinutes && Number(customMinutes) > 0) {
-            setMinutes(Number(customMinutes));
-            setSeconds(0);
-            setCustomMinutes(''); // Reset input setelah diset
+    
+        // Validasi input
+        const minutes = parseInt(customMinutes, 10) || 0;
+        const seconds = parseInt(customSeconds, 10) || 0;
+    
+        if (minutes < 0 || seconds < 0 || seconds >= 60) {
+            alert('Invalid time input. Please ensure seconds are between 0-59.');
+            return;
         }
+    
+        // Update timer
+        setMinutes(minutes);
+        setSeconds(seconds);
+    
+        // Reset input fields
+        setCustomMinutes('');
+        setCustomSeconds('');
     };
+    
 
     return (
         <div className="app-container">
@@ -364,6 +386,15 @@ const Timer = () => {
                                         placeholder="Custom minutes"
                                         min="1"
                                         max="60"
+                                    />
+                                    <span>:</span>
+                                    <input
+                                        type="number"
+                                        value={customSeconds}
+                                        onChange={(e) => setCustomSeconds(e.target.value)}
+                                        placeholder="Seconds"
+                                        min="0"
+                                        max="59"
                                     />
                                     <button type="submit">Set Custom Time</button>
                                 </div>
