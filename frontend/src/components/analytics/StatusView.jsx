@@ -29,8 +29,6 @@ const StatusView = () => {
     return (
         <div className="stats-container">
             <AnalyticsChart data={stats.weeklyData} />
-            <AchievementsList achievements={stats.achievements} />
-            <TopTasks tasks={stats.topTasks} />
         </div>
     );
 };
