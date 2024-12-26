@@ -110,9 +110,9 @@ $ npm run dev
 
 ## 📖 Cara Penggunaan
 ### Daftar akun baru atau login dengan akun yang sudah ada.
-🔗 Hubungkan akun Spotify Premium Anda untuk mengakses musik.
-🎯 Atur target fokus harian atau mingguan.
-✅ Buat tugas baru atau pilih dari daftar tugas yang tersedia.
-⏱️ Pilih durasi fokus (15, 25, atau 45 menit) dan mulai sesi.
-🎵 Pilih musik favorit Anda dari playlist Spotify atau gunakan fitur pencarian.
-📊 Lacak progres Anda melalui statistik dan pencapaian.
+- 🔗 Hubungkan akun Spotify Premium Anda untuk mengakses musik.
+- 🎯 Atur target fokus harian atau mingguan.
+- ✅ Buat tugas baru atau pilih dari daftar tugas yang tersedia.
+- ⏱️ Pilih durasi fokus (15, 25, atau 45 menit) dan mulai sesi.
+- 🎵 Pilih musik favorit Anda dari playlist Spotify atau gunakan fitur pencarian.
+- 📊 Lacak progres Anda melalui statistik dan pencapaian.
