@@ -17,7 +17,6 @@ Waqtify Timer adalah aplikasi produktivitas modern yang menggabungkan teknik Pom
 ### ✅ Manajemen Tugas
 - 📝 **Terintegrasi dengan daftar tugas.**
 - 🎯 **Pemilihan tugas** untuk sesi fokus.
-- 📈 **Pelacakan kemajuan** untuk setiap tugas.
 - 🔍 **Pencarian dan penyaringan cepat.**
 
 ### 🎧 Integrasi Spotify
@@ -29,9 +28,8 @@ Waqtify Timer adalah aplikasi produktivitas modern yang menggabungkan teknik Pom
 
 ### 📈 Pelacakan Kemajuan
 - 🎯 **Pengaturan target harian dan mingguan.**
-- 🔥 **Pelacakan streak** untuk menjaga konsistensi.
 - 📊 Statistik dan analitik **terperinci.**
-- 🏆 Sistem pencapaian untuk **memotivasi pengguna.**
+
 
 ---
 
@@ -110,7 +108,7 @@ $ npm run dev
 
 ## 📖 Cara Penggunaan
 ### Daftar akun baru atau login dengan akun yang sudah ada.
-- 🔗 Hubungkan akun Spotify Premium Anda untuk mengakses musik.
+- 🔗 Hubungkan akun Spotify Anda untuk mengakses musik.
 - 🎯 Atur target fokus harian atau mingguan.
 - ✅ Buat tugas baru atau pilih dari daftar tugas yang tersedia.
 - ⏱️ Pilih durasi fokus (15, 25, atau 45 menit) dan mulai sesi.
