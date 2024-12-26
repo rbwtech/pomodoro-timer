@@ -68,3 +68,42 @@ Waqtify Timer adalah aplikasi produktivitas modern yang menggabungkan teknik Pom
 # Klon repositori
 $ git clone https://github.com/username/waqtify-timer.git
 $ cd waqtify-timer
+```
+
+#### 2️⃣ Instalasi Dependensi
+# Instalasi backend
+```bash
+$ cd backend
+$ npm install
+
+# Instalasi frontend
+$ cd ../frontend
+$ npm install
+```
+
+#### 3️⃣ Konfigurasi Environment
+# Backend (.env)
+```
+PORT=5000
+DB_HOST=localhost
+DB_USER=username_database_anda
+DB_PASS=password_database_anda
+DB_NAME=rbw_tech
+JWT_SECRET=kunci_rahasia_jwt_anda
+```
+# Frontend (.env)
+```
+VITE_API_URL=http://localhost:5000/api
+```
+
+#### 4️⃣ Setup Database
+# Import data.sql di dalam folder /data untuk membuat tabel otomatis di tabel anda
+``` bash
+# Jalankan backend
+$ cd backend
+$ npm start
+
+# Jalankan frontend
+$ cd ../frontend
+$ npm run dev
+```
