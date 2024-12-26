@@ -80,13 +80,13 @@ $ npm install
 ```
 
 #### 3️⃣ Konfigurasi Environment
-Backend (.env)
+Backend (.env), rename _.env menjadi .env di dalam folder backend
 ```
 PORT=5000
 DB_HOST=localhost
 DB_USER=username_database_anda
 DB_PASS=password_database_anda
-DB_NAME=rbw_tech
+DB_NAME=nama_database_anda
 JWT_SECRET=kunci_rahasia_jwt_anda
 ```
 Frontend (.env)
