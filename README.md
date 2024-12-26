@@ -71,7 +71,7 @@ $ cd waqtify-timer
 ```
 
 #### 2️⃣ Instalasi Dependensi
-# Instalasi backend
+Instalasi backend
 ```bash
 $ cd backend
 $ npm install
@@ -82,7 +82,7 @@ $ npm install
 ```
 
 #### 3️⃣ Konfigurasi Environment
-# Backend (.env)
+Backend (.env)
 ```
 PORT=5000
 DB_HOST=localhost
@@ -91,13 +91,13 @@ DB_PASS=password_database_anda
 DB_NAME=rbw_tech
 JWT_SECRET=kunci_rahasia_jwt_anda
 ```
-# Frontend (.env)
+Frontend (.env)
 ```
 VITE_API_URL=http://localhost:5000/api
 ```
 
 #### 4️⃣ Setup Database
-# Import data.sql di dalam folder /data untuk membuat tabel otomatis di tabel anda
+Import data.sql di dalam folder /data untuk membuat tabel otomatis di tabel anda
 ``` bash
 # Jalankan backend
 $ cd backend
@@ -107,3 +107,12 @@ $ npm start
 $ cd ../frontend
 $ npm run dev
 ```
+
+## 📖 Cara Penggunaan
+### Daftar akun baru atau login dengan akun yang sudah ada.
+🔗 Hubungkan akun Spotify Premium Anda untuk mengakses musik.
+🎯 Atur target fokus harian atau mingguan.
+✅ Buat tugas baru atau pilih dari daftar tugas yang tersedia.
+⏱️ Pilih durasi fokus (15, 25, atau 45 menit) dan mulai sesi.
+🎵 Pilih musik favorit Anda dari playlist Spotify atau gunakan fitur pencarian.
+📊 Lacak progres Anda melalui statistik dan pencapaian.
