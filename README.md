@@ -10,7 +10,7 @@ Waqtify Timer adalah aplikasi produktivitas modern yang menggabungkan teknik Pom
 ### ⏳ Manajemen Waktu
 - **Timer Pomodoro** yang dapat disesuaikan dengan sesi fokus dan istirahat.
 - Pilihan durasi preset **(15, 25, dan 45 menit)**.
-- 🔔 **Notifikasi visual dan audio** saat sesi selesai.
+- 🔔 **Notifikasi audio** saat sesi selesai.
 - 🎹 **Pintasan keyboard** untuk kontrol cepat.
 - 📊 **Pelacakan sesi** dan statistik.
 
