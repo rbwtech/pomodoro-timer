@@ -295,6 +295,25 @@ body {
     background: var(--gold-light);
     transform: translateY(-2px);
 }
+.custom-duration-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.custom-duration-wrapper input {
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.custom-duration-wrapper span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 
 .custom-duration input {
     width: 150px;
@@ -313,6 +332,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
+    margin-top: 8px;
 }
 
 .custom-duration button:hover {
