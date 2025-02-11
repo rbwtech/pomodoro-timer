@@ -64,7 +64,7 @@ Waqtify Timer adalah aplikasi produktivitas modern yang menggabungkan teknik Pom
 #### 1️⃣ Klon Repositori
 ```bash
 # Klon repositori
-$ git clone https://github.com/username/waqtify-timer.git
+$ git clone https://github.com/rbwtech/waqtify-timer.git
 $ cd waqtify-timer
 ```
 
